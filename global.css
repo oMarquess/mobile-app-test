@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-poppins-regular: "Poppins-Regular";
+  --font-poppins-medium: "Poppins-Medium";
+  --font-poppins-semibold: "Poppins-SemiBold";
+  --font-poppins-bold: "Poppins-Bold";
+
+  --color-lingua-purple: #6c4ef5;
+  --color-lingua-deep-purple: #5b3bf6;
+  --color-lingua-blue: #4d8bff;
+  --color-lingua-green: #21c16b;
+  --color-success: #21c16b;
+  --color-warning: #ffcc00;
+  --color-streak: #ff8a00;
+  --color-error: #ff4d4f;
+  --color-info: #4d8bff;
+  --color-text-primary: #0d132b;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-surface: #f6f7fb;
+  --color-background: #ffffff;
+}
+
+@utility ds-screen {
+  @apply flex-1 bg-background px-5;
+}
+
+@utility ds-card {
+  @apply rounded-[18px] border border-border bg-background p-4;
+}
+
+@utility ds-section {
+  @apply gap-4;
+}
+
+@utility ds-brand-label {
+  @apply font-poppins-bold text-sm uppercase tracking-[1.2px] text-lingua-purple;
+}
+
+@utility ds-h1 {
+  @apply font-poppins-bold text-[32px] leading-[38px] text-text-primary;
+}
+
+@utility ds-h2 {
+  @apply font-poppins-semibold text-2xl leading-[31px] text-text-primary;
+}
+
+@utility ds-h3 {
+  @apply font-poppins-semibold text-xl leading-[26px] text-text-primary;
+}
+
+@utility ds-h4 {
+  @apply font-poppins-medium text-base leading-[22px] text-text-primary;
+}
+
+@utility ds-body-lg {
+  @apply font-poppins-regular text-base leading-[26px] text-text-primary;
+}
+
+@utility ds-body {
+  @apply font-poppins-regular text-sm leading-[22px] text-text-secondary;
+}
+
+@utility ds-body-sm {
+  @apply font-poppins-regular text-[13px] leading-[21px] text-text-secondary;
+}
+
+@utility ds-caption {
+  @apply font-poppins-regular text-[11px] leading-[15px] text-text-secondary;
+}
