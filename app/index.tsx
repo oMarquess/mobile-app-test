@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function Index() {
@@ -17,6 +18,14 @@ export default function Index() {
         <View className="h-14 flex-1 rounded-[14px] bg-lingua-blue" />
         <View className="h-14 flex-1 rounded-[14px] bg-lingua-green" />
       </View>
+
+      <Link href="/onboarding" asChild>
+        <View className="h-14 items-center justify-center rounded-[16px] bg-lingua-purple">
+          <Text className="font-poppins-semibold text-base text-white">
+            Open Onboarding
+          </Text>
+        </View>
+      </Link>
     </View>
   );
 }
