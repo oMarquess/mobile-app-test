@@ -16,7 +16,7 @@ export default function OnboardingScreen() {
             <Image
               source={images.mascotLogo}
               contentFit="contain"
-              className="h-14 w-14"
+              style={{ width: 56, height: 56 }}
             />
             <Text className="font-poppins-bold text-[34px] leading-[42px] text-text-primary">
               lingua
@@ -60,11 +60,11 @@ export default function OnboardingScreen() {
           <Image
             source={images.mascotWelcome}
             contentFit="contain"
-            className="h-[330px] w-[330px]"
+            style={{ width: 330, height: 330 }}
           />
         </View>
 
-        <Link href="/" asChild>
+        <Link href="/sign-up" asChild>
           <View className="mt-8 h-[78px] flex-row items-center justify-center rounded-[18px] bg-lingua-purple active:bg-lingua-deep-purple">
             <Text className="font-poppins-semibold text-[20px] text-white">
               Get Started

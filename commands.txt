@@ -1,3 +1,5 @@
  npx expo start
  npm run reset-project
  npx skills add expo/skills
+ npx skills add clerk/skills
+ npx expo install expo-auth-session expo-web-browser
