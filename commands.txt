@@ -1,3 +1,7 @@
  npx expo start
  npm run reset-project
  npx skills add expo/skills
+ npx skills add clerk/skills
+ npx expo install expo-auth-session expo-web-browser
+ npx expo install @react-native-async-storage/async-storage
+ npx skills add GetStream/agent-skills
