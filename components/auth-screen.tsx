@@ -3,6 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import { Link, router } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
+import { usePostHog } from "posthog-react-native";
 import { useRef, useState } from "react";
 import {
     KeyboardAvoidingView,
@@ -32,6 +33,7 @@ const codeLength = 6;
 export function AuthScreen({ mode }: AuthScreenProps) {
   const { signIn, fetchStatus: signInFetchStatus } = useSignIn();
   const { signUp, fetchStatus: signUpFetchStatus } = useSignUp();
+  const posthog = usePostHog();
   const [isVerificationVisible, setIsVerificationVisible] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
@@ -47,10 +49,13 @@ export function AuthScreen({ mode }: AuthScreenProps) {
       const { createdSessionId, setActive } = await startGoogleOAuthFlow();
       if (createdSessionId && setActive) {
         await setActive({ session: createdSessionId });
+        posthog.capture("google_sign_in_completed", { mode });
         router.replace("/");
       }
     } catch (error) {
-      setErrorMessage(getClerkErrorMessage(error));
+      const message = getClerkErrorMessage(error);
+      posthog.capture("auth_error", { mode, method: "google", error_message: message });
+      setErrorMessage(message);
     }
   }
 
@@ -93,7 +98,9 @@ export function AuthScreen({ mode }: AuthScreenProps) {
         });
 
         if (signUpError) {
-          setErrorMessage(getClerkErrorMessage(signUpError));
+          const message = getClerkErrorMessage(signUpError);
+          posthog.capture("auth_error", { mode: "sign-up", method: "email", error_message: message });
+          setErrorMessage(message);
           return;
         }
 
@@ -101,7 +108,9 @@ export function AuthScreen({ mode }: AuthScreenProps) {
           await signUp.verifications.sendEmailCode();
 
         if (emailCodeError) {
-          setErrorMessage(getClerkErrorMessage(emailCodeError));
+          const message = getClerkErrorMessage(emailCodeError);
+          posthog.capture("auth_error", { mode: "sign-up", method: "email", error_message: message });
+          setErrorMessage(message);
           return;
         }
 
@@ -118,20 +127,26 @@ export function AuthScreen({ mode }: AuthScreenProps) {
       });
 
       if (signInError) {
-        setErrorMessage(getClerkErrorMessage(signInError));
+        const message = getClerkErrorMessage(signInError);
+        posthog.capture("auth_error", { mode: "sign-in", method: "email", error_message: message });
+        setErrorMessage(message);
         return;
       }
 
       const { error: emailCodeError } = await signIn.emailCode.sendCode();
 
       if (emailCodeError) {
-        setErrorMessage(getClerkErrorMessage(emailCodeError));
+        const message = getClerkErrorMessage(emailCodeError);
+        posthog.capture("auth_error", { mode: "sign-in", method: "email", error_message: message });
+        setErrorMessage(message);
         return;
       }
 
       showVerification();
     } catch (error) {
-      setErrorMessage(getClerkErrorMessage(error));
+      const message = getClerkErrorMessage(error);
+      posthog.capture("auth_error", { mode, method: "email", error_message: message });
+      setErrorMessage(message);
     } finally {
       setIsSubmitting(false);
     }
@@ -181,6 +196,7 @@ export function AuthScreen({ mode }: AuthScreenProps) {
             return;
           }
 
+          posthog.capture("user_signed_up", { method: "email" });
           setIsVerificationVisible(false);
           router.replace("/");
           return;
@@ -200,7 +216,9 @@ export function AuthScreen({ mode }: AuthScreenProps) {
 
       if (verifyError) {
         setVerificationCode("");
-        setErrorMessage(getClerkErrorMessage(verifyError));
+        const message = getClerkErrorMessage(verifyError);
+        posthog.capture("auth_error", { mode: "sign-in", method: "email", error_message: message });
+        setErrorMessage(message);
         requestAnimationFrame(() => codeInputRef.current?.focus());
         return;
       }
@@ -213,6 +231,7 @@ export function AuthScreen({ mode }: AuthScreenProps) {
           return;
         }
 
+        posthog.capture("user_signed_in", { method: "email" });
         setIsVerificationVisible(false);
         router.replace("/");
         return;
@@ -221,7 +240,9 @@ export function AuthScreen({ mode }: AuthScreenProps) {
       setErrorMessage("Sign in verification is not complete yet.");
     } catch (error) {
       setVerificationCode("");
-      setErrorMessage(getClerkErrorMessage(error));
+      const message = getClerkErrorMessage(error);
+      posthog.capture("auth_error", { mode, method: "email", error_message: message });
+      setErrorMessage(message);
       requestAnimationFrame(() => codeInputRef.current?.focus());
     } finally {
       setIsSubmitting(false);

@@ -1,12 +1,14 @@
 import "../global.css";
 
-import { ClerkProvider, useAuth } from "@clerk/expo";
+import { ClerkProvider, useAuth, useUser } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
 import { useFonts } from "expo-font";
-import { router, Stack, useSegments } from "expo-router";
+import { router, Stack, usePathname, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+import { PostHogProvider, usePostHog } from "posthog-react-native";
+import { useEffect, useRef } from "react";
 
+import { posthog } from "@/lib/posthog";
 import { useLanguageStore } from "@/store/useLanguageStore";
 import { appFonts } from "@/theme/fonts";
 
@@ -22,15 +24,21 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   return (
-    <ClerkProvider publishableKey={publishableKey!} tokenCache={tokenCache}>
-      <RootLayoutInner />
-    </ClerkProvider>
+    <PostHogProvider client={posthog}>
+      <ClerkProvider publishableKey={publishableKey!} tokenCache={tokenCache}>
+        <RootLayoutInner />
+      </ClerkProvider>
+    </PostHogProvider>
   );
 }
 
 function RootLayoutInner() {
   const { isLoaded, isSignedIn } = useAuth();
+  const { user } = useUser();
+  const ph = usePostHog();
   const segments = useSegments();
+  const pathname = usePathname();
+  const previousPathname = useRef<string | undefined>(undefined);
   const [fontsLoaded, fontError] = useFonts(appFonts);
   const { selectedLanguageId, _hasHydrated } = useLanguageStore();
 
@@ -41,6 +49,25 @@ function RootLayoutInner() {
       SplashScreen.hideAsync();
     }
   }, [isReady]);
+
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (isSignedIn && user) {
+      ph.identify(user.id, {
+        email: user.primaryEmailAddress?.emailAddress ?? null,
+        name: user.fullName ?? user.firstName ?? null,
+      });
+    } else if (!isSignedIn) {
+      ph.reset();
+    }
+  }, [isLoaded, isSignedIn, user, ph]);
+
+  useEffect(() => {
+    if (previousPathname.current !== pathname) {
+      ph.screen(pathname, { previous_screen: previousPathname.current ?? null });
+      previousPathname.current = pathname;
+    }
+  }, [pathname, ph]);
 
   useEffect(() => {
     if (!isReady) {

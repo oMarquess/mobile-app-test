@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
+import { usePostHog } from "posthog-react-native";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -8,6 +9,8 @@ import { images } from "@/constants/images";
 import { colors } from "@/theme";
 
 export default function OnboardingScreen() {
+  const posthog = usePostHog();
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View className="flex-1 px-10 pb-8 pt-5">
@@ -64,7 +67,7 @@ export default function OnboardingScreen() {
           />
         </View>
 
-        <Link href="/sign-up" asChild>
+        <Link href="/sign-up" asChild onPress={() => posthog.capture("get_started_tapped")}>
           <View className="mt-8 h-[78px] flex-row items-center justify-center rounded-[18px] bg-lingua-purple active:bg-lingua-deep-purple">
             <Text className="font-poppins-semibold text-[20px] text-white">
               Get Started

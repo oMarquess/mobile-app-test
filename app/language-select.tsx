@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import { router } from "expo-router";
+import { usePostHog } from "posthog-react-native";
 import { useMemo, useState } from "react";
 import {
     Pressable,
@@ -26,6 +27,7 @@ const LEARNER_COUNTS: Record<string, string> = {
 
 export default function LanguageSelectScreen() {
   const { selectedLanguageId, setSelectedLanguageId } = useLanguageStore();
+  const posthog = usePostHog();
   const [search, setSearch] = useState("");
   const [localSelected, setLocalSelected] = useState<string | null>(
     selectedLanguageId
@@ -41,6 +43,12 @@ export default function LanguageSelectScreen() {
 
   function handleConfirm() {
     if (!localSelected) return;
+    const language = languages.find((l) => l.id === localSelected);
+    posthog.capture("language_selected", {
+      language_id: localSelected,
+      language_name: language?.name ?? localSelected,
+      is_first_selection: !selectedLanguageId,
+    });
     setSelectedLanguageId(localSelected);
     router.back();
   }
