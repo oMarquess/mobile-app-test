@@ -765,6 +765,505 @@ export const lessons: Lesson[] = [
       },
     ],
   },
+  // ─────────────────────────────────────────
+  // SPANISH — Unit 1: extra lessons (3–6)
+  // ─────────────────────────────────────────
+  {
+    id: "es-u1-l3",
+    unitId: "es-u1",
+    languageId: "es",
+    title: "Daily Life",
+    description: "Talk about everyday activities and routines.",
+    order: 3,
+    xpReward: 10,
+    goals: ["Describe your daily routine", "Use common action verbs", "Talk about time"],
+    aiTeacherPrompt: "You are an encouraging Spanish teacher. Teach daily routine vocabulary: 'desayunar', 'trabajar', 'dormir'. Use simple sentences and ask the student about their day.",
+    activities: [
+      {
+        id: "es-u1-l3-a1",
+        type: "vocabulary",
+        title: "Daily Activities",
+        vocabulary: [
+          { word: "Desayunar", translation: "To have breakfast", pronunciation: "deh-sah-yoo-NAR" },
+          { word: "Trabajar", translation: "To work", pronunciation: "trah-bah-HAR" },
+          { word: "Estudiar", translation: "To study", pronunciation: "ehs-too-DYAR" },
+          { word: "Dormir", translation: "To sleep", pronunciation: "dohr-MEER" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "es-u1-l4",
+    unitId: "es-u1",
+    languageId: "es",
+    title: "At the Café",
+    description: "Order food and drinks at a Spanish café.",
+    order: 4,
+    xpReward: 10,
+    goals: ["Order a drink", "Ask for the menu", "Pay the bill"],
+    aiTeacherPrompt: "You are a helpful Spanish teacher. Role-play a café scene: 'un café, por favor', '¿cuánto cuesta?'. Teach polite ordering phrases.",
+    activities: [
+      {
+        id: "es-u1-l4-a1",
+        type: "vocabulary",
+        title: "Café Vocabulary",
+        vocabulary: [
+          { word: "Café", translation: "Coffee", pronunciation: "kah-FEH" },
+          { word: "Agua", translation: "Water", pronunciation: "AH-gwah" },
+          { word: "Menú", translation: "Menu", pronunciation: "meh-NOO" },
+          { word: "Cuenta", translation: "Bill / Check", pronunciation: "KWEHN-tah" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "es-u1-l5",
+    unitId: "es-u1",
+    languageId: "es",
+    title: "Travel & Directions",
+    description: "Ask for and give directions in Spanish.",
+    order: 5,
+    xpReward: 10,
+    goals: ["Ask where something is", "Give basic directions", "Name common places"],
+    aiTeacherPrompt: "You are a patient Spanish teacher. Teach directions: 'a la derecha', 'a la izquierda', '¿dónde está?'. Use a simple map scenario.",
+    activities: [
+      {
+        id: "es-u1-l5-a1",
+        type: "vocabulary",
+        title: "Direction Words",
+        vocabulary: [
+          { word: "Derecha", translation: "Right", pronunciation: "deh-REH-chah" },
+          { word: "Izquierda", translation: "Left", pronunciation: "ees-KYEHR-dah" },
+          { word: "Recto", translation: "Straight ahead", pronunciation: "REHK-toh" },
+          { word: "Cerca", translation: "Near", pronunciation: "SEHR-kah" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "es-u1-l6",
+    unitId: "es-u1",
+    languageId: "es",
+    title: "Shopping",
+    description: "Shop for items and ask about prices in Spanish.",
+    order: 6,
+    xpReward: 10,
+    goals: ["Ask for prices", "Say what you want to buy", "Use basic numbers in context"],
+    aiTeacherPrompt: "You are a fun Spanish teacher. Teach shopping phrases: '¿cuánto cuesta?', 'quiero comprar', 'es muy caro'. Role-play a market scene.",
+    activities: [
+      {
+        id: "es-u1-l6-a1",
+        type: "vocabulary",
+        title: "Shopping Words",
+        vocabulary: [
+          { word: "Tienda", translation: "Store", pronunciation: "TYEHN-dah" },
+          { word: "Precio", translation: "Price", pronunciation: "PREH-syoh" },
+          { word: "Barato", translation: "Cheap", pronunciation: "bah-RAH-toh" },
+          { word: "Caro", translation: "Expensive", pronunciation: "KAH-roh" },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────
+  // FRENCH — Unit 1: extra lessons (3–6)
+  // ─────────────────────────────────────────
+  {
+    id: "fr-u1-l3",
+    unitId: "fr-u1",
+    languageId: "fr",
+    title: "Daily Life",
+    description: "Talk about everyday activities and routines in French.",
+    order: 3,
+    xpReward: 10,
+    goals: ["Describe your daily routine", "Use common action verbs", "Talk about time"],
+    aiTeacherPrompt: "You are an encouraging French teacher. Teach daily routine vocabulary: 'manger', 'travailler', 'dormir'. Use simple sentences.",
+    activities: [
+      {
+        id: "fr-u1-l3-a1",
+        type: "vocabulary",
+        title: "Daily Activities",
+        vocabulary: [
+          { word: "Manger", translation: "To eat", pronunciation: "mahn-ZHEH" },
+          { word: "Travailler", translation: "To work", pronunciation: "trah-vah-YEH" },
+          { word: "Étudier", translation: "To study", pronunciation: "eh-tü-DYEH" },
+          { word: "Dormir", translation: "To sleep", pronunciation: "dohr-MEER" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "fr-u1-l4",
+    unitId: "fr-u1",
+    languageId: "fr",
+    title: "At the Café",
+    description: "Order food and drinks at a French café.",
+    order: 4,
+    xpReward: 10,
+    goals: ["Order a coffee", "Ask for the bill", "Use polite expressions"],
+    aiTeacherPrompt: "You are a helpful French teacher. Role-play a café: 'un café s'il vous plaît', 'l'addition'. Teach polite café phrases.",
+    activities: [
+      {
+        id: "fr-u1-l4-a1",
+        type: "vocabulary",
+        title: "Café Vocabulary",
+        vocabulary: [
+          { word: "Café", translation: "Coffee", pronunciation: "kah-FEH" },
+          { word: "Eau", translation: "Water", pronunciation: "OH" },
+          { word: "Menu", translation: "Menu", pronunciation: "meh-NÜ" },
+          { word: "Addition", translation: "Bill", pronunciation: "ah-dee-SYOHN" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "fr-u1-l5",
+    unitId: "fr-u1",
+    languageId: "fr",
+    title: "Travel & Directions",
+    description: "Ask for and give directions in French.",
+    order: 5,
+    xpReward: 10,
+    goals: ["Ask where a place is", "Give basic directions", "Name common places"],
+    aiTeacherPrompt: "You are a patient French teacher. Teach directions: 'à droite', 'à gauche', 'tout droit'. Use a map scenario.",
+    activities: [
+      {
+        id: "fr-u1-l5-a1",
+        type: "vocabulary",
+        title: "Direction Words",
+        vocabulary: [
+          { word: "Droite", translation: "Right", pronunciation: "DRWAHT" },
+          { word: "Gauche", translation: "Left", pronunciation: "GOHSH" },
+          { word: "Tout droit", translation: "Straight ahead", pronunciation: "too DRWAH" },
+          { word: "Près", translation: "Near", pronunciation: "PREH" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "fr-u1-l6",
+    unitId: "fr-u1",
+    languageId: "fr",
+    title: "Shopping",
+    description: "Shop for items and ask about prices in French.",
+    order: 6,
+    xpReward: 10,
+    goals: ["Ask for prices", "Say what you want to buy", "Use numbers in context"],
+    aiTeacherPrompt: "You are a fun French teacher. Teach shopping phrases: 'combien ça coûte?', 'je voudrais acheter'. Role-play a market.",
+    activities: [
+      {
+        id: "fr-u1-l6-a1",
+        type: "vocabulary",
+        title: "Shopping Words",
+        vocabulary: [
+          { word: "Magasin", translation: "Store", pronunciation: "mah-gah-ZAN" },
+          { word: "Prix", translation: "Price", pronunciation: "PREE" },
+          { word: "Bon marché", translation: "Cheap", pronunciation: "bohn mar-SHEH" },
+          { word: "Cher", translation: "Expensive", pronunciation: "SHEHR" },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────
+  // JAPANESE — Unit 1: extra lessons (3–6)
+  // ─────────────────────────────────────────
+  {
+    id: "ja-u1-l3",
+    unitId: "ja-u1",
+    languageId: "ja",
+    title: "Daily Life",
+    description: "Talk about everyday activities in Japanese.",
+    order: 3,
+    xpReward: 10,
+    goals: ["Describe daily routines", "Use common verbs", "Talk about time"],
+    aiTeacherPrompt: "You are an encouraging Japanese teacher. Teach daily verbs: 'taberu', 'hataraku', 'neru'. Use simple sentences.",
+    activities: [
+      {
+        id: "ja-u1-l3-a1",
+        type: "vocabulary",
+        title: "Daily Activities",
+        vocabulary: [
+          { word: "食べる", translation: "To eat", pronunciation: "taberu" },
+          { word: "働く", translation: "To work", pronunciation: "hataraku" },
+          { word: "勉強する", translation: "To study", pronunciation: "benkyō suru" },
+          { word: "寝る", translation: "To sleep", pronunciation: "neru" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "ja-u1-l4",
+    unitId: "ja-u1",
+    languageId: "ja",
+    title: "At the Café",
+    description: "Order food and drinks at a Japanese café.",
+    order: 4,
+    xpReward: 10,
+    goals: ["Order a drink", "Ask for the menu", "Pay the bill"],
+    aiTeacherPrompt: "You are a helpful Japanese teacher. Teach café ordering: 'kōhī o kudasai', 'okaikei o onegaishimasu'.",
+    activities: [
+      {
+        id: "ja-u1-l4-a1",
+        type: "vocabulary",
+        title: "Café Vocabulary",
+        vocabulary: [
+          { word: "コーヒー", translation: "Coffee", pronunciation: "kōhī" },
+          { word: "水", translation: "Water", pronunciation: "mizu" },
+          { word: "メニュー", translation: "Menu", pronunciation: "menyū" },
+          { word: "お会計", translation: "Bill", pronunciation: "okaikei" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "ja-u1-l5",
+    unitId: "ja-u1",
+    languageId: "ja",
+    title: "Travel & Directions",
+    description: "Ask for and give directions in Japanese.",
+    order: 5,
+    xpReward: 10,
+    goals: ["Ask where a place is", "Give basic directions", "Name common places"],
+    aiTeacherPrompt: "You are a patient Japanese teacher. Teach directions: 'migi', 'hidari', 'massugu'. Use a map scenario.",
+    activities: [
+      {
+        id: "ja-u1-l5-a1",
+        type: "vocabulary",
+        title: "Direction Words",
+        vocabulary: [
+          { word: "右", translation: "Right", pronunciation: "migi" },
+          { word: "左", translation: "Left", pronunciation: "hidari" },
+          { word: "まっすぐ", translation: "Straight ahead", pronunciation: "massugu" },
+          { word: "近く", translation: "Near", pronunciation: "chikaku" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "ja-u1-l6",
+    unitId: "ja-u1",
+    languageId: "ja",
+    title: "Shopping",
+    description: "Shop for items and ask about prices in Japanese.",
+    order: 6,
+    xpReward: 10,
+    goals: ["Ask for prices", "Say what you want", "Use numbers in context"],
+    aiTeacherPrompt: "You are a fun Japanese teacher. Teach shopping phrases: 'ikura desu ka?', 'kore o kudasai'. Role-play a market scene.",
+    activities: [
+      {
+        id: "ja-u1-l6-a1",
+        type: "vocabulary",
+        title: "Shopping Words",
+        vocabulary: [
+          { word: "お店", translation: "Store", pronunciation: "omise" },
+          { word: "値段", translation: "Price", pronunciation: "nedan" },
+          { word: "安い", translation: "Cheap", pronunciation: "yasui" },
+          { word: "高い", translation: "Expensive", pronunciation: "takai" },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────
+  // GERMAN — Unit 1: extra lessons (3–6)
+  // ─────────────────────────────────────────
+  {
+    id: "de-u1-l3",
+    unitId: "de-u1",
+    languageId: "de",
+    title: "Daily Life",
+    description: "Talk about everyday activities in German.",
+    order: 3,
+    xpReward: 10,
+    goals: ["Describe daily routines", "Use common verbs", "Talk about time"],
+    aiTeacherPrompt: "You are an encouraging German teacher. Teach daily verbs: 'essen', 'arbeiten', 'schlafen'. Use simple sentences.",
+    activities: [
+      {
+        id: "de-u1-l3-a1",
+        type: "vocabulary",
+        title: "Daily Activities",
+        vocabulary: [
+          { word: "Essen", translation: "To eat", pronunciation: "EHS-sen" },
+          { word: "Arbeiten", translation: "To work", pronunciation: "AR-by-ten" },
+          { word: "Lernen", translation: "To study", pronunciation: "LEHR-nen" },
+          { word: "Schlafen", translation: "To sleep", pronunciation: "SHLAH-fen" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "de-u1-l4",
+    unitId: "de-u1",
+    languageId: "de",
+    title: "At the Café",
+    description: "Order food and drinks at a German café.",
+    order: 4,
+    xpReward: 10,
+    goals: ["Order a coffee", "Ask for the menu", "Pay the bill"],
+    aiTeacherPrompt: "You are a helpful German teacher. Teach café ordering: 'einen Kaffee bitte', 'die Rechnung bitte'.",
+    activities: [
+      {
+        id: "de-u1-l4-a1",
+        type: "vocabulary",
+        title: "Café Vocabulary",
+        vocabulary: [
+          { word: "Kaffee", translation: "Coffee", pronunciation: "KAH-feh" },
+          { word: "Wasser", translation: "Water", pronunciation: "VAH-ser" },
+          { word: "Speisekarte", translation: "Menu", pronunciation: "SHPY-zeh-kar-teh" },
+          { word: "Rechnung", translation: "Bill", pronunciation: "REHK-nung" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "de-u1-l5",
+    unitId: "de-u1",
+    languageId: "de",
+    title: "Travel & Directions",
+    description: "Ask for and give directions in German.",
+    order: 5,
+    xpReward: 10,
+    goals: ["Ask where a place is", "Give basic directions", "Name common places"],
+    aiTeacherPrompt: "You are a patient German teacher. Teach directions: 'rechts', 'links', 'geradeaus'. Use a map scenario.",
+    activities: [
+      {
+        id: "de-u1-l5-a1",
+        type: "vocabulary",
+        title: "Direction Words",
+        vocabulary: [
+          { word: "Rechts", translation: "Right", pronunciation: "REHKTS" },
+          { word: "Links", translation: "Left", pronunciation: "LINKS" },
+          { word: "Geradeaus", translation: "Straight ahead", pronunciation: "geh-rah-deh-OWS" },
+          { word: "Nah", translation: "Near", pronunciation: "NAH" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "de-u1-l6",
+    unitId: "de-u1",
+    languageId: "de",
+    title: "Shopping",
+    description: "Shop for items and ask about prices in German.",
+    order: 6,
+    xpReward: 10,
+    goals: ["Ask for prices", "Say what you want to buy", "Use numbers in context"],
+    aiTeacherPrompt: "You are a fun German teacher. Teach shopping phrases: 'Was kostet das?', 'Ich möchte kaufen'. Role-play a market.",
+    activities: [
+      {
+        id: "de-u1-l6-a1",
+        type: "vocabulary",
+        title: "Shopping Words",
+        vocabulary: [
+          { word: "Geschäft", translation: "Store", pronunciation: "geh-SHEHFT" },
+          { word: "Preis", translation: "Price", pronunciation: "PRYS" },
+          { word: "Billig", translation: "Cheap", pronunciation: "BIH-lig" },
+          { word: "Teuer", translation: "Expensive", pronunciation: "TOY-er" },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────
+  // MANDARIN — Unit 1: extra lessons (3–6)
+  // ─────────────────────────────────────────
+  {
+    id: "zh-u1-l3",
+    unitId: "zh-u1",
+    languageId: "zh",
+    title: "Daily Life",
+    description: "Talk about everyday activities in Mandarin.",
+    order: 3,
+    xpReward: 10,
+    goals: ["Describe daily routines", "Use common verbs", "Talk about time"],
+    aiTeacherPrompt: "You are an encouraging Mandarin teacher. Teach daily verbs: 'chī fàn', 'gōngzuò', 'shuìjiào'. Use simple sentences.",
+    activities: [
+      {
+        id: "zh-u1-l3-a1",
+        type: "vocabulary",
+        title: "Daily Activities",
+        vocabulary: [
+          { word: "吃饭", translation: "To eat", pronunciation: "chī fàn" },
+          { word: "工作", translation: "To work", pronunciation: "gōngzuò" },
+          { word: "学习", translation: "To study", pronunciation: "xuéxí" },
+          { word: "睡觉", translation: "To sleep", pronunciation: "shuìjiào" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "zh-u1-l4",
+    unitId: "zh-u1",
+    languageId: "zh",
+    title: "At the Café",
+    description: "Order food and drinks at a Chinese café.",
+    order: 4,
+    xpReward: 10,
+    goals: ["Order a drink", "Ask for the menu", "Pay the bill"],
+    aiTeacherPrompt: "You are a helpful Mandarin teacher. Teach café ordering: 'yī bēi kāfēi', 'mǎidān'. Use polite phrases.",
+    activities: [
+      {
+        id: "zh-u1-l4-a1",
+        type: "vocabulary",
+        title: "Café Vocabulary",
+        vocabulary: [
+          { word: "咖啡", translation: "Coffee", pronunciation: "kāfēi" },
+          { word: "水", translation: "Water", pronunciation: "shuǐ" },
+          { word: "菜单", translation: "Menu", pronunciation: "càidān" },
+          { word: "买单", translation: "Bill", pronunciation: "mǎidān" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "zh-u1-l5",
+    unitId: "zh-u1",
+    languageId: "zh",
+    title: "Travel & Directions",
+    description: "Ask for and give directions in Mandarin.",
+    order: 5,
+    xpReward: 10,
+    goals: ["Ask where a place is", "Give basic directions", "Name common places"],
+    aiTeacherPrompt: "You are a patient Mandarin teacher. Teach directions: 'yòu', 'zuǒ', 'zhí zǒu'. Use a map scenario.",
+    activities: [
+      {
+        id: "zh-u1-l5-a1",
+        type: "vocabulary",
+        title: "Direction Words",
+        vocabulary: [
+          { word: "右", translation: "Right", pronunciation: "yòu" },
+          { word: "左", translation: "Left", pronunciation: "zuǒ" },
+          { word: "直走", translation: "Straight ahead", pronunciation: "zhí zǒu" },
+          { word: "近", translation: "Near", pronunciation: "jìn" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "zh-u1-l6",
+    unitId: "zh-u1",
+    languageId: "zh",
+    title: "Shopping",
+    description: "Shop for items and ask about prices in Mandarin.",
+    order: 6,
+    xpReward: 10,
+    goals: ["Ask for prices", "Say what you want to buy", "Use numbers in context"],
+    aiTeacherPrompt: "You are a fun Mandarin teacher. Teach shopping phrases: 'duōshǎo qián?', 'wǒ xiǎng mǎi'. Role-play a market scene.",
+    activities: [
+      {
+        id: "zh-u1-l6-a1",
+        type: "vocabulary",
+        title: "Shopping Words",
+        vocabulary: [
+          { word: "商店", translation: "Store", pronunciation: "shāngdiàn" },
+          { word: "价格", translation: "Price", pronunciation: "jiàgé" },
+          { word: "便宜", translation: "Cheap", pronunciation: "piányí" },
+          { word: "贵", translation: "Expensive", pronunciation: "guì" },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getLessonsByUnit(unitId: string): Lesson[] {

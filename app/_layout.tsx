@@ -96,7 +96,7 @@ function RootLayoutInner() {
       return;
     }
 
-    if (isSignedIn && selectedLanguageId && !isInTabs && !isPublicRoute && currentRoute !== "language-select") {
+    if (isSignedIn && selectedLanguageId && !isInTabs && !isPublicRoute && currentRoute !== "language-select" && currentRoute !== "lesson") {
       router.replace("/");
     }
   }, [isReady, isSignedIn, selectedLanguageId, segments]);
